@@ -1,0 +1,12 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  <img src="{{ user.profile.image.url }}"></img>
+  <h1>{{ user.username }} Profile</h1>
+  <p>{{ user.email }}</p>
+{% endif %}
+{% endblock %}
